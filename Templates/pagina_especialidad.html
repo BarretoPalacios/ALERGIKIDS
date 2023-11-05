@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Especialidades{% endblock %}
+
+
+{% block contenido %}
+
+<section class="especialidad"> 
+    <h1 class="especialidad_titulo">Especialidades</h1>
+    <article class="especialidad_box">
+        {% for esp in especialidades %}
+            <a href="" class="especialidad_box_card  aparecer">
+                <h2 class="especialidad_box_card_titulo">{{esp.nombre}}</h2>
+                <div class="especialidad_box_card_img">
+                    <img src="{{esp.img.url}}" alt="" >
+                </div>
+            </a>
+        {% endfor %}
+        
+    </article>
+</section>
+
+
+{% endblock contenido %}

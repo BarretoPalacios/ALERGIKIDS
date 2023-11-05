@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Inicio{% endblock %}
+
+
+{% block contenido %}
+
+    <section class="inicio" >
+        <div class="inicio_titulo">
+            <h1 class="inicio_titulo_h1">{{info.nombre}} </h1>
+        </div>
+        <div class="inicio_logo">
+            <div class="inicio_logo_box">
+                <img src="{% static 'img/logo.svg' %}" alt="{{info.nombre}}" class="inicio_logo_box_img" >
+            </div>
+        </div>
+        <div class="inicio_descripcion">
+            <p class="inicio_descripcion_parrafo">{{info.descripcion}}</p>
+        </div>
+    </section>
+    <section class="contacto">
+        <div class="contacto_text">
+            <h2>Contactáctanos</h2>
+            <h3>a través</h3>
+        </div>
+        <div class="contacto_links">
+            <a href="" class="contacto_links_box">
+                <i class="bi bi-whatsapp contacto_links_box_icon"></i>
+            </a>
+            <a href="" class="contacto_links_box">
+                <i class="bi bi-telephone contacto_links_box_icon"></i>
+            </a>
+            <a href="" class="contacto_links_box">
+                <i class="bi bi-cursor contacto_links_box_icon"></i>
+            </a>
+        </div>
+    </section>
+    <section class="seciones_box">
+        {% for nav in navegacion %}
+            <article class="seccion_{{nav.id}} seccion">
+                <header class="seccion_{{nav.id}}_titulo seccion_titulo  aparecer">
+                    <h2>{{nav.titulo}}</h2>
+                </header>
+                <div class="seccion_{{nav.id}}_contenido seccion_contenido">
+                    <div class="seccion_{{nav.id}}_contenido_text   seccion_contenido_text  aparecer">
+                        <p >{{nav.descripcion}}</p>
+                        <a href="{% url nav.link %}">ver {{nav.titulo}}</a>
+                    </div>
+                    <div class="seccion_{{nav.id}}_contenido_img   seccion_contenido_img  aparecer">
+                        <img src="{{nav.img.url}}" alt="" loading="lazy" class="seccion_contenido_img_img">
+                        <hr>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    </section>
+    
+
+{% endblock contenido %}

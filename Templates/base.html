@@ -1,0 +1,77 @@
+<!-- carga de la carpeta de archivos estaticos -->
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- etiqueta para cambiar el titulo en la herencia -->
+    <title>{% block title %}{% endblock %}</title>
+    
+    <!-- icono de pestaña de pagina -->
+    <link rel="shortcut icon" href="{% static 'img/logo.svg' %}"  />
+
+    <!-- archivo css prinsipal -->
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+
+    <!-- glogle fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    
+   
+    <!--  para un css extra -->
+    {% block css_extra %}{% endblock %}
+</head>
+<body>
+    <!-- header que va a ser heredado en todas las plantillas -->
+    <div class="header_box">  
+        <header class="header">
+            <nav class="header_movil">
+                <!-- <a href="#" class="btn-escribenos"><i class="bi bi-whatsapp"></i>Escribenos</a> -->
+                <h1>Alergikids</h1> 
+                <button id="btn-menu">
+                    <i class="icono bi-list"></i>                            
+                </button>
+            </nav>
+           <div class="header_links">
+                    <div class="header_links_logo">
+                        <img src="{% static 'img/logo.svg' %}" alt="" >
+                    </div>
+                    <a href="{% url 'pagina_inicio' %}">inicio</a>
+                    <a href="{% url 'pagina_especialidad' %}">especialidad</a>
+                    <a href="{% url 'pagina_doctor' %}">doctores</a>
+                    <a href="{% url 'pagina_contacto' %}">contacto</a>
+                    <a href="{% url 'pagina_pregunta' %}">Preguntas</a>
+                    <a href="{% url 'pagina_consejo' %}">Consejos</a>
+                    <a href="{% url 'pagina_nosotros' %}">Nosotros</a>
+           </div>
+        </header>
+    </div>
+
+    <!-- contenido de cada template  -->
+    <main >
+        {% block contenido %}{% endblock %}
+    </main> 
+
+     <!-- footer que va a ser heredado en todas las plantillas -->
+    <footer class="footer">
+        <h2>este es el footers</h2>
+    </footer>
+
+    
+    <!-- animaciones de scroll -->
+    <script src="https://unpkg.com/scrollreveal" ></script>
+    <!-- script prinsipal -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+    
+    
+    <!-- para un js extra -->
+    {% block js_extra %}{% endblock %}
+</body>
+</html>
