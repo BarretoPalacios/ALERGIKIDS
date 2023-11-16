@@ -29,3 +29,44 @@
 
 ### ¡Esperamos verte pronto en ALERGIKIDS!
 
+
+
+----------------------------------------------------
+
+# Guía de Instalación y Uso de Django
+
+## 1. Instalación
+
+```bash
+# Crea un entorno virtual (opcional, pero se recomienda)
+python -m venv myenv
+
+# Activa el entorno virtual (Windows)
+myenv\Scripts\activate
+
+# Activa el entorno virtual (macOS y Linux)
+source myenv/bin/activate
+
+# Instala Django
+pip install django
+
+# Crea un proyecto Django
+django-admin startproject myproject
+
+# Crea una aplicación Django
+cd myproject
+python manage.py startapp myapp
+
+# Configura la base de datos en settings.py
+
+# Realiza migraciones
+python manage.py makemigrations
+python manage.py migrate
+
+# Define modelos en models.py
+
+# Crea vistas en views.py
+
+# Define URLs en urls.py
+
+
