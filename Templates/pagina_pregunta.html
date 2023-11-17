@@ -5,20 +5,6 @@
 
 {% block contenido %}
 
-    <!-- {% for pr in preguntas %}
-
-        {% if pr.especialidad %}
-            <h4>{{pr.especialidad}}</h4>
-        {% else %}
-            <h4>Clinica</h4>
-        {% endif %}
-        <span>{{pr.fecha}}</span>
-        <p>{{pr.pregunta}}</p>
-        <p>{{pr.respuesta}}</p>
-
-
-    {% endfor %} -->
-
     <div class="preguntas">
         <div class="preguntas_titulo">
             <h1>FQA</h1>
@@ -26,7 +12,7 @@
         <div class="preguntas_buscador">
             <input type="search" name="dd" id="dd">
         </div>
-        <div class="preguntas_box">
+        <div class="preguntas_box" >
             {% for pr in preguntas %}
                 <div class="preguntas_box_card">
                     <div class="preguntas_box_card_categoria">

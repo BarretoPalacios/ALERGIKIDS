@@ -9,4 +9,5 @@ urlpatterns = [
     path('preguntas', PagePreguntas,name="pagina_pregunta"),
     path('consejos', PageConsejos,name="pagina_consejo"),
     path('nosotros', PageNosotros,name="pagina_nosotros"),
+    path('web-panel-admin/',WebPanelAdmin,name="webPanelAdmin"),
 ] 

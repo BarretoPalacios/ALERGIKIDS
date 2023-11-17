@@ -31,7 +31,7 @@ def PageContacto(request):
 def PagePreguntas(request):
     pr = Preguntas.objects.all()
     context={
-        "preguntas":pr,
+        "preguntas":pr[:2],
     }
     return render(request,'pagina_pregunta.html',context)
 
@@ -40,3 +40,7 @@ def PageConsejos(request):
 
 def PageNosotros(request):
     return render(request,'pagina_nosotros.html')
+
+
+def WebPanelAdmin(request):
+    return render(request,'webPanelAdmin.html')

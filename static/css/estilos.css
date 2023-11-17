@@ -252,7 +252,7 @@ body{
     
 }
 .contacto_links_box:hover{
-    animation: floating 1s infinite ease-in-out;
+    opacity: .7;
 }
 .contacto_links_box_icon{
     font-size: 25px;
