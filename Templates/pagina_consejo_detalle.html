@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Consejos{% endblock %}
+{% block contenido %}
+
+<div class="consejos">
+    <h1>{{consejo.titulo}}</h1>  
+    <h3>{{consejo.fecha}}</h3>
+    <h4>{{consejo.especialidad}}</h4>
+    <p>{{consejo.descripcion}}</p>
+    <img src="{{consejo.img.url}}" alt="">
+    <a href="{% url 'pagina_consejo' %}">volver</a>
+</div>
+<div class="crearComentarios">
+    <h2>comenta </h2>
+    <form  method="post">
+        {% csrf_token %} 
+        {{formulario}}
+        <button type="submit">Comentar</button>
+    </form>
+</div>
+
+<h2>comnetarios</h2>
+<hr>
+<ul>
+    {% for c in comentarios %}
+        <li>{{c.autor}}</li>
+        <li>{{c.comentario}}</li>
+        <hr>
+    {%  endfor %}
+</ul>
+
+{% endblock contenido %}

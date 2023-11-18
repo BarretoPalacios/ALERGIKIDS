@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 from .info import INFORMACION_ALERGIKIDS
+from .form import ComentariosForm
 
 # Create your views here.
 def PageInicio(request):
@@ -31,12 +32,37 @@ def PageContacto(request):
 def PagePreguntas(request):
     pr = Preguntas.objects.all()
     context={
-        "preguntas":pr[:2],
+        "preguntas":pr,
     }
     return render(request,'pagina_pregunta.html',context)
 
 def PageConsejos(request):
-    return render(request,'pagina_consejo.html')
+    consejos = Consejos.objects.all()
+    ctx={"consejo":consejos}
+    return render(request,'pagina_consejo.html',ctx)
+
+def PageConsejoDetalle(request,id):
+    consejo = Consejos.objects.get(id=id)
+    forn = ComentariosForm()
+    
+    if request.method == "POST":
+        formulario = ComentariosForm(request.POST)
+        if formulario.is_valid():
+            Comentarios.objects.create(
+                autor=formulario.cleaned_data["autor"],
+                comentario = formulario.cleaned_data["comentario"],
+                post=consejo,
+            )
+            return redirect(request.path_info)
+
+    comentarios = Comentarios.objects.filter(post=consejo)
+    
+    ctx={
+        "consejo":consejo,
+        "formulario":forn,
+        "comentarios":comentarios
+    }
+    return render(request,'pagina_consejo_detalle.html',ctx)
 
 def PageNosotros(request):
     return render(request,'pagina_nosotros.html')

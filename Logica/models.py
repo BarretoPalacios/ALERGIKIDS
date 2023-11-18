@@ -41,16 +41,23 @@ class Preguntas(models.Model):
         return self.pregunta
 
 class Consejos(models.Model):
-    titulo = models.CharField(max_length=300 ,null=False , verbose_name="Titulo")
-    fecha = models.DateField(auto_created=True)
-    descripcion = models.CharField(max_length=5000,null=False,verbose_name="Descripcion")
-    reacciones = models.IntegerField(default=0,auto_created=True)
+    titulo = models.CharField(max_length=100 ,null=False , verbose_name="Titulo")
+    fecha = models.DateField(auto_now_add=True)
+    descripcion = models.CharField(max_length=200,null=False,verbose_name="Descripcion")
     especialidad = models.ForeignKey(Especialidades, on_delete=models.CASCADE)
     img = models.ImageField(blank=True,null=True ,upload_to="img_consejos/")
 
     def __str__(self):
-        return self.titulo
+        return f"{self.titulo} {self.especialidad}"
+    
+class Comentarios(models.Model):
+    autor = models.CharField(max_length=30)
+    comentario = models.CharField(max_length=200)
+    fecha = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey(Consejos, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.autor} en '{self.post}'"
 
 class Navegaciones(models.Model):
     titulo = models.CharField(max_length=50)

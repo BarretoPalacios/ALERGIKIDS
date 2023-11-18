@@ -1,7 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}Consejos{% endblock %}
-
-
 {% block contenido %}
+
+<div class="consejos">
+    <h1>consejos</h1>
+    {% for con in consejo %}
+            <div style="border: 1px solid black;padding: 10px; display: block; margin: 10px;">
+                <h3>{{con.titulo}}</h3>
+                <li>{{con.fecha}}</li>
+                <li>{{con.descripcion}}</li>
+                <li>{{con.especialidad}}</li>
+                <li>{{con.img.url}}</li>
+                <a href="{% url 'PageConsejoDetalle' id=con.id %}">ver Consejo</a>
+            </div>
+    {%  endfor %}
+</div>
+
 {% endblock contenido %}
