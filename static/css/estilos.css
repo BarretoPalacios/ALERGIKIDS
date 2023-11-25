@@ -26,6 +26,7 @@
 body{
     font-family: 'IBM Plex Sans Devanagari', sans-serif;
 }
+
 .header_box{
     position: absolute;
     top: 20px;
@@ -378,6 +379,7 @@ body{
     align-content: space-between;
     gap: 20px;
     max-width: 700px;
+    padding-bottom: 30px;
 }
 .especialidad_box_card{
     background-color: var(--color10);
@@ -433,22 +435,23 @@ body{
 .doctores_box{
     max-width: 800px;
     display: flex;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    padding: 20px;
     
 }
 .doctores_box_card{
     background-color: var(--color10);
-    padding: 40px 20px;
+    padding: 40px 20px 20px 20px;
     border-radius: 20px;
     position: relative;
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 .doctores_box_card_doctor {
     width: 200px;
@@ -464,39 +467,13 @@ body{
     color: var(--color9);
 }
 .doctores_box_card_img{
-    max-width: 300px;
+    max-width: 250px;
     overflow: hidden;
     border-radius: 20px;
     
 }
 .doctores_box_card_img img{
     max-width: 100%;
-}
-.doctores_box_card_likes {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 0px;
-    overflow: hidden;
-    transition: .2s ease;
-}
-.doctores_box_card_likes button{
-    background-color: transparent;
-    border: none;
-    font-size: 40px;
-    color: var(--color9);
-   
-}
-.doctores_box_card_likes button:hover{
-    opacity: .8;
-}
-.doctores_box_card_likes span{
-    font-size: 30px;
-    color: var(--color9);
-}
-.doctores_box_card:hover .doctores_box_card_likes{
-    height: 100px;
 }
 .doctores_box_card_especialidad{
     text-align: center;
@@ -521,10 +498,12 @@ body{
     color: var(--color10);
     text-shadow: 4px 3px 0px var(--color_7);
 }
+
 .preguntas_box{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-content: space-evenly;
     gap: 20px;
     max-width: 700px;
 }
@@ -534,6 +513,7 @@ body{
     height:fit-content;
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: var(--sombraNormal);
 }
 .preguntas_box_card_categoria{
     background-color: var(--color10);
@@ -557,9 +537,15 @@ body{
     font-weight: 900;
 }
 .preguntas_box_card_text_respuesta{
-    text-align: justify;
+    text-align: center;
 }
-
+.preguntas_box_fecha{
+    padding: 10px;
+    text-align: center;
+    background-color: var(--color10);
+    font-weight: bold;
+    color: var(--color_7);
+}
 
 .PageContacto{
     background-color: var(--color_4);
@@ -571,6 +557,7 @@ body{
 }
 
 .PageContacto_titulo{
+    width: fit-content;
     text-align: center;
     font-size: var(--txtGrande);
     color: var(--color9);
@@ -641,6 +628,91 @@ body{
     
 
 
+.consejos{
+    background-color: var(--color9);
+    padding-top:100px ;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    gap: 20px;
+}
+.consejos_titulo{
+    text-align: center;
+    font-size: var(--txtGrande);
+    color: var(--color10);
+    text-shadow: 4px 3px 0px var(--color_1);
+}
+.consejos_box{
+    padding: 20px;
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-content: space-evenly;
+    justify-content: center;
+}
+.consejos_box_card{
+    border-radius: 30px;
+    flex-grow: 1;
+    max-width: 700px;
+    display: flex;
+    overflow: hidden;
+    
+}
+.consejos_box_card_img{
+    width: 50%;
+    background-color: var(--color_8);
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
+
+    color: var(--color9);
+    font-weight: bold;
+}
+.consejos_box_card_img_box{    
+    border-radius: 30px;
+    overflow: hidden;
+}
+.consejos_box_card_img_box img{
+    width: 100%;
+}
+.consejos_box_card_text{
+    background-color: var(--color10);
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 30px;
+
+    color: var(--color9);
+    text-align: start;
+}
+.consejos_box_card_text h2{
+   text-transform: capitalize;
+}
+
+.consejos_box_card_text a{
+    background-color: var(--color9);
+    color: var(--color10);
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 30px;
+}
+.consejos_box_card_text a:hover{
+    opacity: .6;
+}
+
+
+
+
+
 @keyframes floating {
     0% { transform: translate(0,  0px); }
     50%  { transform: translate(0, 15px); }
@@ -676,6 +748,19 @@ body{
         padding: 40px 0px;
     } 
 }
+@media screen and (max-width:700px){
+    .consejos_box_card{
+        justify-content: center;
+        flex-direction: column;
+        
+    }
+    .consejos_box_card_img{
+        width: 100%;
+    }
+    .consejos_box_card_text{
+        width: 100%;
+    }
+}
 @media screen and (max-width:500px){
     .inicio .inicio_descripcion{
         width: 90%;
@@ -692,4 +777,55 @@ body{
         color: var(--color9);
         transition: .2s  linear;
     }
+}
+.buscador{
+    max-width: 400px;
+    position: relative;
+    background-color: var(--color10);
+    padding: 10px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+
+    box-shadow: var(--sombraNormal);
+}
+.buscador::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: var(--color9);
+    border-top-right-radius:40px ;
+    border-bottom-right-radius: 40px;
+}
+.buscador input{
+    flex-grow: 1;
+    background-color: var(--color10);    
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.buscador button{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    bottom: 0;
+    z-index: 2;
+ background-color: transparent;
+ font-size: 20px;
+ font-weight: bold;
+ color: var(--color10);
+ border: none;
+}
+.advertencia{
+    color: var(--color9);
+    background-color: var(--color10);
+    border-radius: 20px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

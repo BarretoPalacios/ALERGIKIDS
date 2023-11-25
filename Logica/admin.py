@@ -16,5 +16,3 @@ admin.site.register(Servicios)
 admin.site.register(Preguntas)
 admin.site.register(Consejos)
 admin.site.register(Navegaciones)
-
-admin.site.register(Comentarios)

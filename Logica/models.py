@@ -50,14 +50,6 @@ class Consejos(models.Model):
     def __str__(self):
         return f"{self.titulo} {self.especialidad}"
     
-class Comentarios(models.Model):
-    autor = models.CharField(max_length=30)
-    comentario = models.CharField(max_length=200)
-    fecha = models.DateTimeField(auto_now_add=True)
-    post = models.ForeignKey(Consejos, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.autor} en '{self.post}'"
 
 class Navegaciones(models.Model):
     titulo = models.CharField(max_length=50)

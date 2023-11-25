@@ -4,17 +4,37 @@
 {% block contenido %}
 
 <div class="consejos">
-    <h1>consejos</h1>
-    {% for con in consejo %}
-            <div style="border: 1px solid black;padding: 10px; display: block; margin: 10px;">
-                <h3>{{con.titulo}}</h3>
-                <li>{{con.fecha}}</li>
-                <li>{{con.descripcion}}</li>
-                <li>{{con.especialidad}}</li>
-                <li>{{con.img.url}}</li>
-                <a href="{% url 'PageConsejoDetalle' id=con.id %}">ver Consejo</a>
-            </div>
-    {%  endfor %}
+    <h1 class="consejos_titulo">CONSEJOS</h1>
+    <form method="post" class="buscador">
+        {% csrf_token %}
+        <input type="search" placeholder="Busca tu consejo" name="dd" id="dd">
+        <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    <section class="consejos_box">
+        {% if consejo %}
+            {% for con in consejo %}
+                <article class="consejos_box_card">
+                    <div class="consejos_box_card_img">
+                        <div class="consejos_box_card_img_box">
+                            <img src="{{con.img.url}}" alt="{{con.titulo}}" >
+                        </div>
+                        <h3>{{con.especialidad}}</h3>
+                        <h4>{{con.fecha}}</h4>
+                    </div>
+
+                    <div class="consejos_box_card_text">
+                        <h2>{{con.titulo}}</h2>
+                        <p>{{con.descripcion}}</p>
+                        <a href="{% url 'PageConsejoDetalle' id=con.id %}">ver Consejo</a>
+                    </div>
+                </article>
+                
+            {%  endfor %}
+        {% else %}
+                <p class="advertencia">no hay consejos aún &nbsp;&nbsp;<i class="bi bi-emoji-frown-fill"></i></p>
+        {% endif %}
+    </section>
 </div>
 
 {% endblock contenido %}

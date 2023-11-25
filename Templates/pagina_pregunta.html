@@ -9,9 +9,11 @@
         <div class="preguntas_titulo">
             <h1>FQA</h1>
         </div>
-        <div class="preguntas_buscador">
-            <input type="search" name="dd" id="dd">
-        </div>
+        <form method="post" class="buscador">
+            {% csrf_token %}
+            <input type="search" placeholder="Busca tu pregunta" name="dd" id="dd">
+            <button type="submit"><i class="bi bi-search"></i></button>
+        </form>
         <div class="preguntas_box" >
             {% for pr in preguntas %}
                 <div class="preguntas_box_card">

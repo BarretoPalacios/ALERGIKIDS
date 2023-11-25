@@ -11,20 +11,13 @@
     </div>
     <div class="doctores_box">
         {% for doc in doctores %}
-            <div href="#" class="doctores_box_card aparecer">
+            <div  class="doctores_box_card aparecer">
                 <div class="doctores_box_card_doctor">
                     <h2>{{doc.alias}}</h2>
                 </div>
                 <a href="#" class="doctores_box_card_img">
                     <img src="{{doc.img.url}}" alt="" >
                 </a>
-                <div class="doctores_box_card_likes">
-                    <button id="btn-likes-doctores">
-                        <i class="bi bi-heart-fill"></i>
-                        
-                    </button>
-                    <span id="btn-count-likes-doctores">0</span>
-                </div>
                 <hr>
                 <div class="doctores_box_card_especialidad">
                     <h2>{{doc.especialidad}}</h2>
