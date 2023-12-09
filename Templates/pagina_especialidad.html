@@ -9,7 +9,7 @@
     <h1 class="especialidad_titulo">Especialidades</h1>
     <article class="especialidad_box">
         {% for esp in especialidades %}
-            <a href="" class="especialidad_box_card  aparecer">
+            <a href="{% url 'PageEspecialidadDetalle' id=esp.id %}" class="especialidad_box_card  aparecer">
                 <h2 class="especialidad_box_card_titulo">{{esp.nombre}}</h2>
                 <div class="especialidad_box_card_img">
                     <img src="{{esp.img.url}}" alt="" >

@@ -8,13 +8,13 @@
     <form method="post" class="buscador">
         {% csrf_token %}
         <input type="search" placeholder="Busca tu consejo" name="dd" id="dd">
-        <button type="submit"><i class="bi bi-search"></i></button>
+        <button type="submit"><i class="bi bi-search" data-clase=""></i></button>
     </form>
 
     <section class="consejos_box">
         {% if consejo %}
             {% for con in consejo %}
-                <article class="consejos_box_card">
+                <article class="consejos_box_card aparecer">
                     <div class="consejos_box_card_img">
                         <div class="consejos_box_card_img_box">
                             <img src="{{con.img.url}}" alt="{{con.titulo}}" >
@@ -25,7 +25,7 @@
 
                     <div class="consejos_box_card_text">
                         <h2>{{con.titulo}}</h2>
-                        <p>{{con.descripcion}}</p>
+                        <p>{{con.descripcion | slice:":250"}} ...</p>
                         <a href="{% url 'PageConsejoDetalle' id=con.id %}">ver Consejo</a>
                     </div>
                 </article>

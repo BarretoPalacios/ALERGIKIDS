@@ -60,7 +60,58 @@
 
      <!-- footer que va a ser heredado en todas las plantillas -->
     <footer class="footer">
-        <h2>este es el footers</h2>
+        <ul>
+            <h3>Contácto</h3>
+            <li>
+                <a href="https://wa.me/51905451482/?text=Hola%20desde%20mi%20sitio%20web" target="_blank" class="f_links">
+                    whatsapp
+                </a>
+            </li>
+            <li>
+                <a href="https://www.google.com/maps?q=Calle+las+Magnolias+124,+Los+Olivos,+Peru" target="_blank" class="f_links">
+                    Ubicación</a>
+            </li>
+            <li>
+                <a href="" target="_blank" class="f_links">
+                    Llamada</a>
+            </li>
+        </ul>
+
+        <ul>
+            <h3>Navegación</h3>
+            <li>
+                <a href="{% url 'pagina_inicio' %}">inicio</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina_nosotros' %}">Nosotros</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina_especialidad' %}">especialidad</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina_doctor' %}">doctores</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina_contacto' %}">contacto</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina_pregunta' %}">Preguntas</a> 
+            </li>
+            <li>
+                <a href="{% url 'pagina_consejo' %}">Consejos</a>
+            </li>
+        </ul>
+
+        <ul>
+            <h3>Más</h3>
+            <li>
+                <a href="{% url 'pagina_contacto' %}">Privacidad</a>
+            </li>
+            <li>
+                <a href="{% url 'pagina_pregunta' %}">Mas</a> 
+            </li>
+        </ul>
+
     </footer>
 
     

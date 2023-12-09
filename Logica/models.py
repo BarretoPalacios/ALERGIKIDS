@@ -43,7 +43,7 @@ class Preguntas(models.Model):
 class Consejos(models.Model):
     titulo = models.CharField(max_length=100 ,null=False , verbose_name="Titulo")
     fecha = models.DateField(auto_now_add=True)
-    descripcion = models.CharField(max_length=200,null=False,verbose_name="Descripcion")
+    descripcion = models.TextField(verbose_name="Descripcion")
     especialidad = models.ForeignKey(Especialidades, on_delete=models.CASCADE)
     img = models.ImageField(blank=True,null=True ,upload_to="img_consejos/")
 

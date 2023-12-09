@@ -18,6 +18,13 @@ def PageEspecialidades(request):
     }
     return render(request,'pagina_especialidad.html',context)
 
+def PageEspecialidadDetalle(request,id):
+    esp = Especialidades.objects.get(id=id)
+    ctx={
+        "consejo":esp,
+    }
+    return render(request,'pagina_especialidad_detalle.html',ctx)
+
 def PageDoctores(request):
     dr = Doctores.objects.all()
     context={
@@ -46,6 +53,7 @@ def PageConsejoDetalle(request,id):
         "consejo":consejo,
     }
     return render(request,'pagina_consejo_detalle.html',ctx)
+
 
 def PageNosotros(request):
     return render(request,'pagina_nosotros.html')

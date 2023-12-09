@@ -40,7 +40,7 @@ body{
     width: 70%;
     height: auto;
     border-radius: 40px;
-    background-color: rgb(255, 255, 255);
+    background-color:var(--color10);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,12 +117,6 @@ body{
     border: none;
     max-width: 100%;
 }
-
-
-.footer{
-    width: 100%;
-    background-color: #FCE8A5;
-}
 /* -------------------------------------------------- */
 /* --------------------PAGINA INICIO----------------- */
 /* -------------------------------------------------- */
@@ -132,7 +126,6 @@ body{
     width: 100%;
     min-height: 100vh;  
     background-image: url('/static/img/portada.jpg');
-
     background-size: cover;
     background-position: center;
     position: relative;
@@ -140,9 +133,7 @@ body{
     gap: 20px;
     flex-direction: column;
     justify-content: space-evenly;
-    overflow: hidden;
-
-    
+    overflow: hidden;  
 }
 .inicio .inicio_titulo{
     width: 30%;
@@ -221,13 +212,13 @@ body{
 .contacto{
     width: 100%;
     background-color: var(--color10);
-    height: auto;
     padding: 40px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 40px;
+    height: auto;
 }
 .contacto_text{
     text-align: center;
@@ -258,6 +249,11 @@ body{
 .contacto_links_box_icon{
     font-size: 25px;
     color: var(--color10);
+}
+
+.contacto address b{
+    color: var(--color9);
+    font-size: var(--txtMediano);
 }
 
 .seciones_box{
@@ -358,7 +354,7 @@ body{
 
 .especialidad{
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     background: var(--color_1);
     display: flex;
     justify-content: center;
@@ -415,7 +411,63 @@ body{
 }
 
 
+.esp_detalle{
+    padding-top: 100px;
+    background-color: var(--color9);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.esp_detalle_box{
+    max-width: 1000px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+}
+.esp_detalle_img_box{
+    background-color: var(--color10);
+    padding: 20px;
+    max-width: 500px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: var(--sombraNormal);
+}
+.esp_detalle_img_box img{
+    max-width: 100%;
+    border-radius: 40px;
+}
+.esp_detalle_titulo{
+    font-size: var(--txtGrande);
+    color: var(--color10);
+    text-shadow: 4px 3px 0px var(--color_7);
+}
+.esp_detalle_parrafo{
+    color: var(--color10);
+    font-size: var(--txtMediano);
+    
+}
+.volver_especialidades{
+    text-decoration: none;
+}
+.volver_especialidades i{
+    color: var(--color10);
+    font-size: 30px;
+
+}
+
+
 .doctores{
+    min-height: 100vh;
     background-color: var(--color9);
     display: flex;
     flex-direction: column;
@@ -486,6 +538,7 @@ body{
 
 
 .preguntas{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -500,6 +553,7 @@ body{
 }
 
 .preguntas_box{
+    padding: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -548,6 +602,7 @@ body{
 }
 
 .PageContacto{
+    min-height: 100vh;
     background-color: var(--color_4);
     padding: 100px 0px 100px 0px;
     display: flex;
@@ -635,6 +690,7 @@ body{
     flex-direction: column;
     align-items:center ;
     gap: 20px;
+    min-height: 100vh;
 }
 .consejos_titulo{
     text-align: center;
@@ -709,7 +765,62 @@ body{
     opacity: .6;
 }
 
+.footer{
+    background-color: var(--color_4);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
 
+}
+.footer ul{
+    padding: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.footer ul h3{
+    color: var(--color9);
+    padding-bottom: 20px;
+}
+.footer ul li{
+    list-style: none;
+}
+.footer ul li a{
+    text-transform: capitalize;
+    text-decoration: none;
+    color: var(--color_1);
+    font-weight: bold;
+}
+.footer ul li a:hover{
+    text-decoration: underline;
+}
+.footer::before{
+    z-index: 3;
+    width: 70px;
+    height: 70px;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color10);
+    border-top-right-radius: 100px;
+    box-shadow: var(--sombraNormal);
+}
+.footer::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color10);
+    z-index: 3;
+    width: 70px;
+    height: 70px;
+    border-top-left-radius: 100px;
+    box-shadow: var(--sombraNormal);
+}
 
 
 
@@ -782,23 +893,10 @@ body{
     max-width: 400px;
     position: relative;
     background-color: var(--color10);
-    padding: 10px;
     border-radius: 50px;
-    display: flex;
-    align-items: center;
-
+    display: flex;  
+    overflow: hidden;
     box-shadow: var(--sombraNormal);
-}
-.buscador::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100%;
-    background-color: var(--color9);
-    border-top-right-radius:40px ;
-    border-bottom-right-radius: 40px;
 }
 .buscador input{
     flex-grow: 1;
@@ -807,18 +905,16 @@ body{
     border: none;
     outline: none;
 }
+
+
 .buscador button{
-    position: absolute;
-    top: 0;
-    right: 15px;
-    bottom: 0;
-    z-index: 2;
- background-color: transparent;
- font-size: 20px;
- font-weight: bold;
- color: var(--color10);
- border: none;
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background-color: var(--color9);
+    color: var(--color10);
 }
+ 
 .advertencia{
     color: var(--color9);
     background-color: var(--color10);

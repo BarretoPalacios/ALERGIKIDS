@@ -5,6 +5,7 @@ urlpatterns = [
     path('web-panel-admin/',WebPanelAdmin,name="webPanelAdmin"),
     path('', PageInicio,name="pagina_inicio"),
     path('especialidades', PageEspecialidades,name="pagina_especialidad"),
+    path("especialidad-detalle/<int:id>/",PageEspecialidadDetalle,name="PageEspecialidadDetalle"),
     path('doctores', PageDoctores,name="pagina_doctor"),
     path('contacto', PageContacto,name="pagina_contacto"),
     path('preguntas', PagePreguntas,name="pagina_pregunta"),
