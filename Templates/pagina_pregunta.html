@@ -11,29 +11,33 @@
         </div>
         <form method="post" class="buscador">
             {% csrf_token %}
-            <input type="search" placeholder="Busca tu pregunta" name="dd" id="dd">
+            <input type="search" placeholder="Busca tu pregunta" name="query">
             <button type="submit"><i class="bi bi-search"></i></button>
         </form>
         <div class="preguntas_box" >
-            {% for pr in preguntas %}
-                <div class="preguntas_box_card  aparecer">
-                    <div class="preguntas_box_card_categoria">
-                        {% if pr.especialidad %}
-                            <h4>{{pr.especialidad}}</h4>
-                        {% else %}
-                            <h4>Clinica</h4>
-                        {% endif %}
-                    </div>   
-                    <div class="preguntas_box_card_text">
-                        <p class="preguntas_box_card_text_pregunta">{{pr.pregunta}}</p>
-                        <hr>
-                        <p class="preguntas_box_card_text_respuesta">{{pr.respuesta}}</p>
+            {% if preguntas %}
+                {% for pr in preguntas %}
+                    <div class="preguntas_box_card  aparecer">
+                        <div class="preguntas_box_card_categoria">
+                            {% if pr.especialidad %}
+                                <h4>{{pr.especialidad}}</h4>
+                            {% else %}
+                                <h4>Clinica</h4>
+                            {% endif %}
+                        </div>   
+                        <div class="preguntas_box_card_text">
+                            <p class="preguntas_box_card_text_pregunta">{{pr.pregunta}}</p>
+                            <hr>
+                            <p class="preguntas_box_card_text_respuesta">{{pr.respuesta}}</p>
+                        </div>
+                        <div class="preguntas_box_fecha">
+                            <span>{{pr.fecha}}</span>
+                        </div>
                     </div>
-                    <div class="preguntas_box_fecha">
-                        <span>{{pr.fecha}}</span>
-                    </div>
-                </div>
-            {% endfor %} 
+                {% endfor %}
+            {% else %}
+                    <p class="sinResultados">No se encontraron resultados :(</p>
+            {% endif %}
         </div>
     </div>
 

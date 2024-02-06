@@ -462,7 +462,6 @@ body{
 .volver_especialidades i{
     color: var(--color10);
     font-size: 30px;
-
 }
 
 
@@ -599,6 +598,11 @@ body{
     background-color: var(--color10);
     font-weight: bold;
     color: var(--color_7);
+}
+.sinResultados{
+    color: var(--color10);
+    font-size: var(--txtMediano);
+    text-align: center;
 }
 
 .PageContacto{
@@ -763,6 +767,76 @@ body{
 }
 .consejos_box_card_text a:hover{
     opacity: .6;
+}
+.consejos-detalles{
+    padding: 100px 20px 20px 20px;
+    display: flex;
+    background-color: var(--color9);
+}
+.consejos_detalles_box{
+    margin: auto;
+    padding: 20px;
+    
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.consejo_especialidad,.consejo_fecha{
+    color: var(--color_1);
+    text-align: center;
+}
+.consejo_descripcion{
+    color: var(--color10);
+    font-size: var(--txtMediano);
+}
+.volver_consejo{
+    text-decoration: none;
+    text-align: center;
+}
+.volver_consejo i{
+    
+    color: var(--color10);
+    font-size: 30px;
+}
+.img_box_consejo{
+    padding: 10px;
+    border-radius: 10px;
+    align-self: center;
+    max-width: 350px;
+    background-color: var(--color10);
+}
+.img_box_consejo_img{
+    max-width: 100%;
+}
+
+.nosotros_page{
+    display: flex;
+   padding-top: 70px;
+    background-color: var(--color_4);
+}
+.nosotros{
+    padding: 30px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 1000px;
+}
+.nosotros_titulo{
+    font-size: var(--txtGrande);
+    color: var(--color10);
+    text-shadow: 4px 3px 0px var(--color_7);
+}
+.subtitulo_nosotros{
+    font-size: var(--txtGrande);
+    color: var(--color10);
+    text-shadow: 4px 3px 0px var(--color_7);
+}
+.parrafo_nosotros{
+    color: var(--color9);
+    font-size: var(--txtMediano);
 }
 
 .footer{

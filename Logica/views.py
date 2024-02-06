@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
 from .info import INFORMACION_ALERGIKIDS
+from django.db.models import Q
 
 # Create your views here.
 def PageInicio(request):
@@ -39,15 +40,33 @@ def PageContacto(request):
     return render(request,'pagina_contacto.html')
 
 def PagePreguntas(request):
-    pr = Preguntas.objects.all()
+    if request.method == 'POST':
+        query = request.POST['query']
+        objs = Preguntas.objects.filter(
+            Q(pregunta__contains=query)|
+            Q(respuesta__contains=query)|
+            Q(fecha__contains=query))
+        
+    else:
+        objs = Preguntas.objects.all()
+        
     context={
-        "preguntas":pr,
+        "preguntas":objs,
     }
     return render(request,'pagina_pregunta.html',context)
 
 def PageConsejos(request):
-    consejos = Consejos.objects.all()
+    if request.method == 'POST':
+        query = request.POST['query']
+        consejos = consejos = Consejos.objects.filter(
+            Q(titulo__contains=query)|
+            Q(descripcion__contains=query)|
+            Q(fecha__contains=query))     
+    else:
+        consejos = Consejos.objects.all()
+    
     ctx={"consejo":consejos}
+    
     return render(request,'pagina_consejo.html',ctx)
 
 def PageConsejoDetalle(request,id):
