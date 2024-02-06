@@ -12,7 +12,10 @@ def PageInicio(request):
     return render(request,'PageInicio.html',context)
 
 def PageEspecialidades(request):
-    esp = Especialidades.objects.all()
+    # muestra solo las primeras 6 especialidades
+    esp = Especialidades.objects.all()[:6]
+    # muestra todas las especialidades
+    # esp = Especialidades.objects.all()
     context={ 
         "especialidades":esp
     }
