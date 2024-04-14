@@ -1,1 +1,1 @@
-web: python manage.py collectstatic && gunicorn alergikidss.wsgi
+web: python manage.py collectstatic && gunicorn core.wsgi
