@@ -138,4 +138,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
+CSRF_TRUSTED_ORIGINS = ['http://*','https://web-production-17d9.up.railway.app']
