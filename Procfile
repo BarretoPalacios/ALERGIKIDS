@@ -1,1 +1,1 @@
-web: gunicorn ALERGIKIDS.wsgi
+web: gunicorn core.wsgi
